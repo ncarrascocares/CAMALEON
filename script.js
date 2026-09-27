@@ -37,12 +37,12 @@ const productosBase = [
     },
     {
         id: 4,
-        nombre: "Aretes de Cristal",
+        nombre: "Aros de Cristal",
         categoria: "aretes",
         precio: 12990,
         precioOriginal: null,
         imagen: "images/ArosVintage.jpeg",
-        descripcion: "Hermosos aretes con cristales brillantes, ¡brilla todo el día!",
+        descripcion: "Hermosos aros con cristales brillantes, ¡brilla todo el día!",
         rating: 4.5
     },
     {
@@ -77,12 +77,12 @@ const productosBase = [
     },
     {
         id: 8,
-        nombre: "Aretes de Gota",
+        nombre: "Aros de Gota",
         categoria: "aretes",
         precio: 21990,
         precioOriginal: null,
         imagen: "images/ToposFlorXL.jpeg",
-        descripcion: "Elegantes aretes en forma de gota, perfectos para cualquier look.",
+        descripcion: "Elegantes aros en forma de gota, perfectos para cualquier look.",
         rating: 4
     },
     {
@@ -117,12 +117,12 @@ const productosBase = [
     },
     {
         id: 12,
-        nombre: "Aretes de Perla",
+        nombre: "Aros de Perla",
         categoria: "aretes",
         precio: 29990,
         precioOriginal: null,
         imagen: "images/CollarCangrejo.jpeg",
-        descripcion: "Clásicos aretes de perla con montaje en oro blanco.",
+        descripcion: "Clásicos aros de perla con montaje en oro blanco.",
         rating: 5
     }
 ];
