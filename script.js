@@ -293,23 +293,6 @@ function generarEstrellas(rating) {
 
 // Configurar eventos
 function configurarEventos() {
-    const accountButton = document.getElementById('accountButton');
-    const accountDropdown = document.getElementById('accountDropdown');
-
-    if (accountButton && accountDropdown) {
-        accountButton.addEventListener('click', () => {
-            const isOpen = accountDropdown.classList.toggle('active');
-            accountButton.setAttribute('aria-expanded', isOpen);
-        });
-
-        document.addEventListener('click', (event) => {
-            if (!accountButton.contains(event.target) && !accountDropdown.contains(event.target)) {
-                accountDropdown.classList.remove('active');
-                accountButton.setAttribute('aria-expanded', 'false');
-            }
-        });
-    }
-
     const cartButton = document.getElementById('cartButton');
     const closeCart = document.getElementById('closeCart');
     const cartOverlay = document.getElementById('cartOverlay');
