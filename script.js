@@ -136,7 +136,6 @@ let productosFiltrados = [...productos];
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     aplicarContenidoPagina();
-    actualizarContadoresCategorias();
     renderizarProductos(productos);
     configurarEventos();
     actualizarCarrito();
@@ -148,14 +147,6 @@ function cargarProductos() {
 
 function cargarContenido() {
     return { ...contenidoBase };
-}
-
-function actualizarContadoresCategorias() {
-    document.querySelectorAll('[data-category-count]').forEach((element) => {
-        const categoria = element.dataset.categoryCount;
-        const total = productos.filter((producto) => producto.categoria === categoria).length;
-        element.textContent = `${total} ${total === 1 ? 'producto' : 'productos'}`;
-    });
 }
 
 function cargarCarrito() {
