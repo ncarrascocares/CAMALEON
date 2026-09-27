@@ -137,7 +137,7 @@ const contenidoBase = {
     categoriaAretes: 'images/FondoAros.jpeg',
     sobreMiImagen: 'images/sobre-mi.png',
     sobreMiTitulo: 'Camaleón',
-    sobreMiTexto: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, nihil. Commodi aliquid magni quidem asperiores esse cumque nam, impedit non optio quibusdam nulla ipsum necessitatibus quia? Sunt aliquam illum quisquam?'
+    sobreMiTexto: 'Hola, soy Nanci.\n\nSoy mamá, esposa, soñadora y la creadora de Camaleón.\n\nEsta historia empezó de la forma más simple: mirando fotos de bordados. Me enamoré de los hilos, los colores y los detalles hechos a mano. De esas imágenes nació una idea que no me dejó dormir: ¿y si pudiera crear aros que se sintieran así de especiales?\n\nAsí, entre la vida de mamá, el trabajo y muchas ganas, nació Camaleón en mi casita de Rengo. Sin grandes máquinas, sin tienda física, solo yo, mis manos y el apoyo de mi familia.\n\nCamaleón no es solo bisutería. Es mi forma de recordarle a cada mujer que puede reinventarse, cambiar de colores y seguir siendo ella misma. Como un camaleón.'
 };
 
 let productos = cargarProductos();
