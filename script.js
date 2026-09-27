@@ -1,5 +1,3 @@
-const STORAGE_PRODUCTS_KEY = 'camaleonProductos';
-const STORAGE_CONTENT_KEY = 'camaleonContenido';
 const STORAGE_CART_KEY = 'camaleonCarrito';
 const WHATSAPP_PHONE = '56962465634';
 
@@ -138,39 +136,26 @@ let productosFiltrados = [...productos];
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
     aplicarContenidoPagina();
+    actualizarContadoresCategorias();
     renderizarProductos(productos);
     configurarEventos();
     actualizarCarrito();
 });
 
 function cargarProductos() {
-    const productosGuardados = localStorage.getItem(STORAGE_PRODUCTS_KEY);
-
-    if (!productosGuardados) {
-        return [...productosBase];
-    }
-
-    try {
-        return JSON.parse(productosGuardados);
-    } catch (error) {
-        console.warn('No se pudieron cargar los productos guardados.', error);
-        return [...productosBase];
-    }
+    return [...productosBase];
 }
 
 function cargarContenido() {
-    const contenidoGuardado = localStorage.getItem(STORAGE_CONTENT_KEY);
+    return { ...contenidoBase };
+}
 
-    if (!contenidoGuardado) {
-        return { ...contenidoBase };
-    }
-
-    try {
-        return { ...contenidoBase, ...JSON.parse(contenidoGuardado) };
-    } catch (error) {
-        console.warn('No se pudo cargar el contenido guardado.', error);
-        return { ...contenidoBase };
-    }
+function actualizarContadoresCategorias() {
+    document.querySelectorAll('[data-category-count]').forEach((element) => {
+        const categoria = element.dataset.categoryCount;
+        const total = productos.filter((producto) => producto.categoria === categoria).length;
+        element.textContent = `${total} ${total === 1 ? 'producto' : 'productos'}`;
+    });
 }
 
 function cargarCarrito() {
