@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bisutería Online - Accesorios Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-info">
+                    <span><i class="fas fa-phone"></i> +569 6246 5634</span>
+                    <span><i class="fas fa-envelope"></i> hormazabalnanci@gmail.com</span>
+                </div>
+                <div class="header-links">
+                    <div class="account-menu">
+                        <button class="account-button" id="accountButton" type="button" aria-expanded="false" aria-controls="accountDropdown">
+                            <i class="fas fa-user"></i> Mi Cuenta
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="account-dropdown" id="accountDropdown">
+                            <a href="admin.html"><i class="fas fa-screwdriver-wrench"></i> Panel admin</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <img src="./images/logo-camaleon_v2.png" alt="Logo Camaleón" class="navbar-logo">
+                    <h1>Camaleón</h1>
+                </div>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#categorias">Categorías</a></li>
+                    <li><a href="#sobre-mi">Sobre mi</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <button class="cart-icon" id="cartButton" type="button" aria-label="Abrir carrito" aria-expanded="false" aria-controls="cartDrawer">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION CON CARRUSEL -->
+    <section class="hero-carousel">
+        <!-- Contenedor de imágenes -->
+        <div class="carousel-container">
+            <!-- Imágenes externas desde Pexels -->
+            <!--
+            <img src="https://images.pexels.com/photos/4155252/pexels-photo-4155252.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop" alt="Bisutería dorada artesanal" class="carousel-slide active">
+            <img src="https://images.pexels.com/photos/26570970/pexels-photo-26570970/free-photo-of-gold-jewellery-on-white-surface.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop" alt="Collares dorados elegantes" class="carousel-slide">
+            <img src="https://images.pexels.com/photos/8187058/pexels-photo-8187058.jpeg?auto=compress&cs=tinysrgb&w=1600&h=900&fit=crop" alt="Accesorios boho y bisutería" class="carousel-slide">
+            -->
+            
+            <img src="./images/hero-1.png" alt="Bisutería dorada artesanal" class="carousel-slide active" data-content="hero1">
+            <img src="./images/hero-2.png" alt="Collares dorados elegantes" class="carousel-slide" data-content="hero2">
+            <img src="./images/hero-3.png" alt="Accesorios boho y bisutería" class="carousel-slide" data-content="hero3">
+            
+        </div>
+
+        <!-- Overlay oscuro -->
+        <div class="carousel-overlay"></div>
+
+        <!-- Contenido del hero -->
+        <div class="hero-content">
+            <h1>Colecciones Exclusivas</h1>
+            <p>Bisutería artesanal única y elegante</p>
+        </div>
+
+        <!-- Controles (opcional) -->
+        <div class="carousel-controls">
+            <button class="carousel-btn prev" onclick="previousSlide()">❮</button>
+            <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+        </div>
+
+        <!-- Indicadores de puntos -->
+        <div class="carousel-dots">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </section>
+
+
+    <!-- CATEGORÍAS -->
+    <section class="categorias" id="categorias">
+        <div class="container">
+            <h2>Nuestras Categorías</h2>
+            <div class="categorias-grid">
+                <div class="categoria-card" data-categoria="anillos">
+                    <img src="images/DobleCorazon.jpeg" alt="Anillos" data-content="categoria-anillos">
+                    <h3>Prendedores</h3>
+                    <p>15 productos</p>
+                </div>
+                <div class="categoria-card" data-categoria="collares">
+                    <img src="https://via.placeholder.com/250x250?text=Collares" alt="Collares" data-content="categoria-collares">
+                    <h3>Collares</h3>
+                    <p>20 productos</p>
+                </div>
+                <div class="categoria-card" data-categoria="pulseras">
+                    <img src="https://via.placeholder.com/250x250?text=Pulseras" alt="Pulseras" data-content="categoria-pulseras">
+                    <h3>Pulseras</h3>
+                    <p>18 productos</p>
+                </div>
+                <div class="categoria-card" data-categoria="aretes">
+                    <img src="https://via.placeholder.com/250x250?text=Aretes" alt="Aretes" data-content="categoria-aretes">
+                    <h3>Aros</h3>
+                    <p>25 productos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="productos" id="productos">
+        <div class="container">
+            <h2>Productos Destacados</h2>
+            
+            <div class="filtros">
+                <button class="filtro-btn active" data-filtro="todos">Todos</button>
+                <button class="filtro-btn" data-filtro="anillos">Prendedores</button>
+                <button class="filtro-btn" data-filtro="collares">Collares</button>
+                <button class="filtro-btn" data-filtro="pulseras">Pulseras</button>
+                <button class="filtro-btn" data-filtro="aretes">Aros</button>
+            </div>
+
+            <div class="productos-grid" id="productosGrid">
+                <!-- Los productos se cargan con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE MI -->
+    <section class="sobre-mi" id="sobre-mi">
+        <div class="sobre-mi-container">
+            <h2>Sobre mi</h2>
+            <div class="sobre-mi-card">
+                <div class="sobre-mi-imagen">
+                    <img src="images/sobre-mi.png" alt="Camaleón bisutería artesanal" data-content="sobreMiImagen">
+                </div>
+                <div class="sobre-mi-texto">
+                    <h3 data-content="sobreMiTitulo">Camaleón</h3>
+                    <p data-content="sobreMiTexto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, nihil. Commodi aliquid magni quidem asperiores esse cumque nam, impedit non optio quibusdam nulla ipsum necessitatibus quia? Sunt aliquam illum quisquam?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contacto">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Camaleón</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook de Camaleón"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram de Camaleón"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/56962465634" target="_blank" rel="noopener" aria-label="WhatsApp de Camaleón"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL PRODUCTO -->
+    <div class="modal" id="modalProducto">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <img id="modalImg" src="" alt="Producto">
+                <div class="modal-info">
+                    <h2 id="modalNombre"></h2>
+                    <p id="modalDescripcion"></p>
+                    <p class="modal-precio" id="modalPrecio"></p>
+                    <div class="cantidad-selector">
+                        <button id="decrementar">-</button>
+                        <input type="number" id="cantidad" value="1" min="1">
+                        <button id="incrementar">+</button>
+                    </div>
+                    <button class="btn btn-primary" id="agregarCarrito">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CARRITO -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+        <div class="cart-header">
+            <div>
+                <h2>Carrito</h2>
+                <p>Revisa tu pedido antes de enviarlo.</p>
+            </div>
+            <button class="cart-close" id="closeCart" type="button" aria-label="Cerrar carrito">
+                <i class="fas fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="cart-body" id="cartItems">
+            <p class="cart-empty">Tu carrito está vacío.</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <strong id="cartTotal">$0</strong>
+            </div>
+            <button class="btn btn-primary whatsapp-checkout" id="whatsappCheckout" type="button" disabled>
+                <i class="fab fa-whatsapp"></i> Enviar pedido por WhatsApp
+            </button>
+            <button class="btn btn-secondary clear-cart" id="clearCart" type="button" disabled>
+                Vaciar carrito
+            </button>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>

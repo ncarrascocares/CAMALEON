@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Panel Admin - Camaleón</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-page">
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-info">
+                    <span><i class="fas fa-screwdriver-wrench"></i> Panel administrativo</span>
+                    <span><i class="fas fa-store"></i> Camaleón</span>
+                </div>
+                <div class="header-links">
+                    <button class="admin-logout" id="logoutButton" type="button" hidden>
+                        <i class="fas fa-right-from-bracket"></i> Cerrar sesión
+                    </button>
+                    <a href="index.html"><i class="fas fa-arrow-left"></i> Volver a la tienda</a>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <img src="./images/logo-camaleon_v2.png" alt="Logo Camaleón" class="navbar-logo">
+                    <h1>Camaleón</h1>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-login" id="loginView">
+        <section class="login-card">
+            <div class="login-card-header">
+                <i class="fas fa-lock"></i>
+                <h2>Acceso administrador</h2>
+            </div>
+            <form class="admin-form" id="loginForm">
+                <div class="admin-field">
+                    <label for="adminUser">Usuario</label>
+                    <input id="adminUser" type="text" autocomplete="username" required>
+                </div>
+                <div class="admin-field">
+                    <label for="adminPassword">Contraseña</label>
+                    <div class="password-field">
+                        <input id="adminPassword" type="password" autocomplete="current-password" required>
+                        <button id="togglePassword" class="password-toggle" type="button" aria-label="Mostrar contraseña">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <p class="login-error" id="loginError" role="alert"></p>
+                <button class="btn btn-primary" type="submit">Ingresar</button>
+            </form>
+        </section>
+    </main>
+
+    <main class="admin-main" id="adminView" hidden>
+        <div class="container">
+            <div class="admin-title">
+                <h2>Editar página</h2>
+                <p>Agrega productos, cambia imágenes y actualiza textos visibles en esta tienda.</p>
+            </div>
+
+            <div class="admin-layout">
+                <section class="admin-panel">
+                    <div class="admin-tabs">
+                        <button class="admin-tab active" type="button" data-tab="productos">Productos</button>
+                        <button class="admin-tab" type="button" data-tab="imagenes">Imágenes</button>
+                        <button class="admin-tab" type="button" data-tab="textos">Textos</button>
+                    </div>
+
+                    <section class="admin-section active" id="tab-productos">
+                        <div class="admin-edit-status" id="productEditStatus">
+                            <i class="fas fa-circle-plus"></i>
+                            <span>Nuevo producto</span>
+                        </div>
+                        <form class="admin-form" id="productForm">
+                            <input type="hidden" id="productId">
+                            <div class="admin-field">
+                                <label for="productName">Nombre</label>
+                                <input id="productName" type="text" required>
+                            </div>
+                            <div class="admin-field">
+                                <label for="productCategory">Categoría</label>
+                                <select id="productCategory" required>
+                                    <option value="anillos">Prendedores</option>
+                                    <option value="collares">Collares</option>
+                                    <option value="pulseras">Pulseras</option>
+                                    <option value="aretes">Aros</option>
+                                </select>
+                            </div>
+                            <div class="admin-field">
+                                <label for="productPrice">Precio actual</label>
+                                <input id="productPrice" type="number" min="0" step="100" required>
+                            </div>
+                            <div class="admin-field">
+                                <label for="productOldPrice">Precio anterior</label>
+                                <input id="productOldPrice" type="number" min="0" step="100" placeholder="Opcional">
+                            </div>
+                            <div class="admin-field">
+                                <label for="productRating">Calificación</label>
+                                <select id="productRating">
+                                    <option value="5">5 estrellas</option>
+                                    <option value="4.5">4.5 estrellas</option>
+                                    <option value="4">4 estrellas</option>
+                                    <option value="3.5">3.5 estrellas</option>
+                                </select>
+                            </div>
+                            <div class="admin-field">
+                                <label for="productImage">Imagen desde URL</label>
+                                <input id="productImage" type="url" placeholder="https://...">
+                            </div>
+                            <div class="admin-field">
+                                <label for="productImageFile">O subir imagen</label>
+                                <input id="productImageFile" type="file" accept="image/*">
+                            </div>
+                            <div class="admin-field">
+                                <label for="productDescription">Descripción</label>
+                                <textarea id="productDescription" required></textarea>
+                            </div>
+                            <div class="admin-actions">
+                                <button class="btn btn-primary" type="submit">Guardar producto</button>
+                                <button class="btn btn-secondary" id="clearProduct" type="button">Nuevo</button>
+                            </div>
+                        </form>
+
+                        <div class="admin-list">
+                            <h3>Productos guardados</h3>
+                            <div id="adminProductList"></div>
+                        </div>
+                    </section>
+
+                    <section class="admin-section" id="tab-imagenes">
+                        <form class="admin-form" id="contentImagesForm">
+                            <div class="admin-field">
+                                <label for="hero1">Carrusel 1</label>
+                                <input id="hero1" type="text" placeholder="https://... o images/hero-1.png">
+                                <input id="hero1File" type="file" accept="image/*">
+                            </div>
+                            <div class="admin-field">
+                                <label for="hero2">Carrusel 2</label>
+                                <input id="hero2" type="text" placeholder="https://... o images/hero-2.png">
+                                <input id="hero2File" type="file" accept="image/*">
+                            </div>
+                            <div class="admin-field">
+                                <label for="hero3">Carrusel 3</label>
+                                <input id="hero3" type="text" placeholder="https://... o images/hero-3.png">
+                                <input id="hero3File" type="file" accept="image/*">
+                            </div>
+                            <div class="admin-field">
+                                <label for="categoriaAnillos">Imagen Prendedores</label>
+                                <input id="categoriaAnillos" type="text" placeholder="https://... o images/prendedores.png">
+                                <input id="categoriaAnillosFile" type="file" accept="image/*">
+                            </div>
+                            <div class="admin-field">
+                                <label for="categoriaCollares">Imagen Collares</label>
+                                <input id="categoriaCollares" type="text" placeholder="https://... o images/collares.png">
+                                <input id="categoriaCollaresFile" type="file" accept="image/*">
+                            </div>
+                            <div class="admin-field">
+                                <label for="categoriaPulseras">Imagen Pulseras</label>
+                                <input id="categoriaPulseras" type="text" placeholder="https://... o images/pulseras.png">
+                                <input id="categoriaPulserasFile" type="file" accept="image/*">
+                            </div>
+                            <div class="admin-field">
+                                <label for="categoriaAretes">Imagen Aros</label>
+                                <input id="categoriaAretes" type="text" placeholder="https://... o images/aros.png">
+                                <input id="categoriaAretesFile" type="file" accept="image/*">
+                            </div>
+                            <div class="admin-field">
+                                <label for="sobreMiImagen">Imagen Sobre mi</label>
+                                <input id="sobreMiImagen" type="text" placeholder="https://... o images/sobre-mi.png">
+                                <input id="sobreMiImagenFile" type="file" accept="image/*">
+                            </div>
+                            <div class="admin-actions">
+                                <button class="btn btn-primary" type="submit">Guardar imágenes</button>
+                            </div>
+                            <p class="admin-note">Para estas imágenes puedes subir un archivo, usar una URL o escribir una ruta local como <strong>images/hero-1.png</strong>.</p>
+                        </form>
+                    </section>
+
+                    <section class="admin-section" id="tab-textos">
+                        <form class="admin-form" id="contentTextForm">
+                            <div class="admin-field">
+                                <label for="sobreMiTitulo">Título Sobre mi</label>
+                                <input id="sobreMiTitulo" type="text" required>
+                            </div>
+                            <div class="admin-field">
+                                <label for="sobreMiTexto">Texto Sobre mi</label>
+                                <textarea id="sobreMiTexto" required></textarea>
+                            </div>
+                            <div class="admin-actions">
+                                <button class="btn btn-primary" type="submit">Guardar textos</button>
+                                <button class="btn btn-secondary" id="resetAll" type="button">Restaurar todo</button>
+                            </div>
+                        </form>
+                    </section>
+                </section>
+
+                <section class="admin-preview">
+                    <div class="admin-preview-header">
+                        <div>
+                            <h3>Vista de productos</h3>
+                            <p>Selecciona un recuadro para editarlo.</p>
+                        </div>
+                        <a class="btn btn-secondary" href="index.html">Ver tienda</a>
+                    </div>
+                    <div class="admin-preview-grid" id="adminPreviewGrid"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+</html>
