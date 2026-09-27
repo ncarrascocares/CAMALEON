@@ -11,7 +11,7 @@ const productosBase = [
         categoria: "anillos",
         precio: 24990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Anillo+1",
+        imagen: "images/DobleCorazon.jpeg",
         descripcion: "Hermoso anillo dorado con detalles de cristal, perfecto para cualquier ocasión.",
         rating: 4.5
     },
@@ -21,7 +21,7 @@ const productosBase = [
         categoria: "collares",
         precio: 45990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Collar+1",
+        imagen: "images/CollarColibri.jpeg",
         descripcion: "Elegante collar con perlas naturales, ideal para eventos especiales.",
         rating: 5
     },
@@ -31,7 +31,7 @@ const productosBase = [
         categoria: "pulseras",
         precio: 18990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Pulsera+1",
+        imagen: "images/CorazonSagrado.jpeg",
         descripcion: "Pulsera plateada con diseño moderno y acabado premium.",
         rating: 4
     },
@@ -41,7 +41,7 @@ const productosBase = [
         categoria: "aretes",
         precio: 12990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Arete+1",
+        imagen: "images/ArosVintage.jpeg",
         descripcion: "Hermosos aretes con cristales brillantes, ¡brilla todo el día!",
         rating: 4.5
     },
@@ -51,7 +51,7 @@ const productosBase = [
         categoria: "anillos",
         precio: 89990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Anillo+2",
+        imagen: "images/CorazonDeluxe.jpeg",
         descripcion: "Anillo de lujo con diamante sintético de alta calidad.",
         rating: 5
     },
@@ -61,7 +61,7 @@ const productosBase = [
         categoria: "collares",
         precio: 22990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Collar+2",
+        imagen: "images/CollarCaballitodeMar.jpeg",
         descripcion: "Collar moderno y minimalista, versátil para cualquier estilo.",
         rating: 4.5
     },
@@ -71,7 +71,7 @@ const productosBase = [
         categoria: "pulseras",
         precio: 35990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Pulsera+2",
+        imagen: "images/MariposaBordados.jpeg",
         descripcion: "Exquisita pulsera de perlas blancas con cierre de plata.",
         rating: 4.5
     },
@@ -81,7 +81,7 @@ const productosBase = [
         categoria: "aretes",
         precio: 21990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Arete+2",
+        imagen: "images/ToposFlorXL.jpeg",
         descripcion: "Elegantes aretes en forma de gota, perfectos para cualquier look.",
         rating: 4
     },
@@ -91,7 +91,7 @@ const productosBase = [
         categoria: "anillos",
         precio: 34990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Anillo+3",
+        imagen: "images/Colibri.jpeg",
         descripcion: "Anillo vintage con diseño retro y acabado antique.",
         rating: 4.5
     },
@@ -101,7 +101,7 @@ const productosBase = [
         categoria: "collares",
         precio: 28990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Collar+3",
+        imagen: "images/CollarEstrella.jpeg",
         descripcion: "Collar largo perfecto para capas, con cadena fina dorada.",
         rating: 4
     },
@@ -111,7 +111,7 @@ const productosBase = [
         categoria: "pulseras",
         precio: 16990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Pulsera+3",
+        imagen: "images/EStrellaDeluxe.jpeg",
         descripcion: "Pulsera de cuero genuino con detalles metálicos.",
         rating: 4.5
     },
@@ -121,7 +121,7 @@ const productosBase = [
         categoria: "aretes",
         precio: 29990,
         precioOriginal: null,
-        imagen: "https://via.placeholder.com/250x250?text=Arete+3",
+        imagen: "images/CollarCangrejo.jpeg",
         descripcion: "Clásicos aretes de perla con montaje en oro blanco.",
         rating: 5
     }
@@ -132,9 +132,9 @@ const contenidoBase = {
     hero2: './images/hero-2.png',
     hero3: './images/hero-3.png',
     categoriaAnillos: 'images/DobleCorazon.jpeg',
-    categoriaCollares: 'https://via.placeholder.com/250x250?text=Collares',
-    categoriaPulseras: 'https://via.placeholder.com/250x250?text=Pulseras',
-    categoriaAretes: 'https://via.placeholder.com/250x250?text=Aretes',
+    categoriaCollares: 'images/FondoCollares.jpeg',
+    categoriaPulseras: 'images/FondoPulseras.jpeg',
+    categoriaAretes: 'images/FondoAros.jpeg',
     sobreMiImagen: 'images/sobre-mi.png',
     sobreMiTitulo: 'Camaleón',
     sobreMiTexto: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti, nihil. Commodi aliquid magni quidem asperiores esse cumque nam, impedit non optio quibusdam nulla ipsum necessitatibus quia? Sunt aliquam illum quisquam?'
