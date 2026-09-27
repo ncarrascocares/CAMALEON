@@ -1,44 +1,31 @@
 # Publicacion de Camaleon
 
-Este proyecto esta listo para publicarse como sitio estatico: solo necesita servir los archivos `index.html`, `style.css`, `script.js` y la carpeta `images/`.
+Este proyecto esta listo para publicarse como sitio estatico. La tienda usa `index.html`, `style.css`, `script.js` y la carpeta `images/`.
 
 ## Recomendacion
 
 La opcion mas simple sin contratar hosting es GitHub Pages:
 
 1. Crea una cuenta en GitHub si no tienes una.
-2. Crea un repositorio nuevo, por ejemplo `dulce_tejido`.
+2. Crea un repositorio nuevo, por ejemplo `CAMALEON`.
 3. Sube todos los archivos del proyecto.
 4. En GitHub entra a `Settings > Pages`.
 5. En `Build and deployment`, selecciona `Deploy from a branch`.
 6. Elige la rama `main` y carpeta `/root`.
-7. Guarda. GitHub entregara una URL tipo `https://usuario.github.io/dulce_tejido/`.
+7. Guarda. GitHub entregara una URL tipo `https://usuario.github.io/CAMALEON/`.
 
-El archivo `.nojekyll` evita que GitHub Pages procese el sitio con Jekyll. Para esta pagina, lo correcto es publicar los archivos tal como estan.
+El archivo `.nojekyll` evita que GitHub Pages procese el sitio con Jekyll.
 
-## Importante sobre el panel administrador
+## Cambios de contenido
 
-El panel `admin.html` funciona para editar localmente en tu navegador, pero no es un administrador seguro para internet porque todo sitio estatico envia su HTML, CSS y JS al visitante.
+Los cambios se hacen directamente por codigo:
 
-Eso significa:
+- Productos, precios, categorias y textos base: `script.js`.
+- Estructura visible de la pagina: `index.html`.
+- Estilos visuales y responsive: `style.css`.
+- Imagenes: carpeta `images/`.
 
-- La contrasena del admin no protege datos en un servidor.
-- Los cambios hechos en el panel se guardan en el navegador de quien edita, no en todos los visitantes.
-- Para publicar cambios reales, debes editar los archivos del proyecto y volver a subirlos al repositorio.
-
-Por eso se agrego:
-
-- `robots.txt` para pedir a buscadores que no indexen `admin.html`.
-- `<meta name="robots" content="noindex, nofollow">` dentro de `admin.html`.
-
-Esto no reemplaza seguridad real, pero evita exponer el panel como una pagina pensada para buscadores.
-
-## Flujo recomendado sin contratar servicios
-
-1. Usa `admin.html` localmente para preparar productos y textos.
-2. Cuando tengas el contenido final, actualiza los datos definitivos en `script.js` e imagenes en `images/`.
-3. Sube los cambios a GitHub.
-4. GitHub Pages publicara la nueva version.
+Luego se debe crear un commit y subirlo a GitHub para que GitHub Pages publique la nueva version.
 
 ## Probar antes de publicar
 
@@ -51,7 +38,6 @@ python3 -m http.server 8000
 Luego abre:
 
 - Tienda: `http://localhost:8000/`
-- Admin local: `http://localhost:8000/admin.html`
 
 ## Alternativa gratuita
 

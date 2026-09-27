@@ -1,4 +1,2 @@
 User-agent: *
-Disallow: /admin.html
-Disallow: /admin.js
-
+Allow: /
